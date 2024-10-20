@@ -31,7 +31,7 @@ async function shortURL(finalResult) {
 
 function convertToGift(flink) {
     const userID =  flink.replace("https://tinyurl.com/", "?uid=");
-    const giftLink = `http://127.0.0.1:5500/gift/Gift.html${userID}`;
+    const giftLink = `http://saviru.github.io/HBD-Generator/Gift/Gift.html${userID}`;
     return giftLink;
 }
 
@@ -50,7 +50,7 @@ function linkGenerate() {
     console.log(ln2);
     console.log(ln3);
 
-    const genLink = convertToUrlFormat(`http://127.0.0.1:5500/gift/Wish/Wish.html?nm=${name}&l1=${ln1}&l2=${ln2}&l3=${ln3}`);
+    const genLink = convertToUrlFormat(`http://saviru.github.io/HBD-Generator/Gift/Wish/Wish.html?nm=${name}&l1=${ln1}&l2=${ln2}&l3=${ln3}`);
     //progress.innerHTML="Link&nbsp;Generating..";
     
     shortURL(genLink);
