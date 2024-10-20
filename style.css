@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #1a1a1a;
+}
+
+.wishform {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 20rem;
+}
+
+.formcont {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(17px);
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(17px);
+    font-family: "Nunito", sans-serif;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.wDt {
+    margin-top: 2.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    position: relative;
+    width: 25rem;
+    text-align: left;
+    transition: 0.25s;
+}
+
+.lastcont {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.wDt .inputcont {
+    position: relative;
+    width: 100%;
+    padding: .6rem 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #999;
+    color: #fff;
+    letter-spacing: 0.05em;
+    font-size: 1.2em;
+    transition: 0.5s;
+}
+
+.wDt .inputcont:focus ~ .contlabel {
+    color: #0f0;
+}
+
+.wDt .outputcont:read-only {
+    position: relative;
+    width: 100%;
+    padding: .6rem 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #999;
+    color: #fff;
+    letter-spacing: 0.05em;
+    font-size: 1.2em;
+    transition: 0.5s;
+}
+
+
+.wDt .contlabel {
+    position: absolute;
+    left: 0;
+    padding: 10px 0;
+    font-size: 1.2em;
+    pointer-events: none;
+    color: #666;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.wDt .contlabel .inputword {
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+    transition: 0.25s cubic-bezier(0.5, 1, 0.5, 1.5);
+}
+
+.wDt .inputcont:focus ~ .contlabel .inputword,
+.wDt .inputcont:valid ~ .contlabel .inputword {
+    color: #0f0;
+    text-shadow: 0 0 5px #0f0,
+                0 0 15px #0f0,
+                0 0 30px #0f0;
+    transform: translateY(-30px);
+}
+.wDt .inputcont:focus,
+.wDt .inputcont:valid {
+    border-bottom: 2px solid #fff;
+}
+
+.wDt .outputcont:read-only.vdOut ~ .contlabel .inputword {
+    color: #0f0;
+    text-shadow: 0 0 5px #0f0,
+                0 0 15px #0f0,
+                0 0 30px #0f0;
+    transform: translateY(-30px);
+}
+
+.wDt .outputcont:read-only.vdOut {
+    border-bottom: 2px solid #fff;
+}
+
+.wDt #name:user-invalid {
+    border-bottom: 2px solid red;
+    transition: border 0.5s ease-in-out;
+}
+
+.lastcont {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#ctmbutton {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 300;
+    font-size: large;
+    cursor: pointer;
+}
+
+#ctmbutton #ctme {
+    position: relative;
+    cursor: pointer;
+}
+
+#ctmbutton::before {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #222;
+    border-radius: 10px;
+    transition: all 50ms ease-in-out;
+}
+
+
+#ctmbutton:hover::before{
+    inset: 3px;
+    background: linear-gradient(180deg, rgba(63, 63, 63, 0.7), rgba(0, 0, 0, 0.6));
+    backdrop-filter: blur(17px);
+    -webkit-backdrop-filter: blur(17px);
+}
+
+#ctmbutton:hover {
+    font-weight: 500;
+    background: linear-gradient(315deg, #0ce39a, #69007f, #fc0987);
+}
+
+#ctmbutton::after {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    background: linear-gradient(315deg, #0ce39a, #69007f, #fc0987);
+    border-radius: 9px;
+    transition: 0.3s;
+    opacity: 0;
+    filter: blur(20px);
+    z-index: -1;
+}
+
+#ctmbutton:hover::after {
+    opacity: 1;
+}
+
+.no-cursor {
+    cursor: none;
+}
+
+.wbtil {
+    position: absolute;
+    top: 0;
+    padding: 1em;
+}
+
+.titles {
+    position: relative;
+    z-index: 55;
+    color: white;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.glitch {
+    font-family: "Exo 2", sans-serif;
+    font-size: 2.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+
+    text-shadow:
+        0.05em 0 0 rgba(255, 0, 0, .75),
+        0.05em 0 0 rgba(0, 255, 0, .75),
+        0.05em 0 0 rgba(0, 0, 255, .75);
+
+    animation: glitch 500ms infinite;
+}
+
+.glitch span {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+  
+.glitch span:first-child {
+    animation: glitch 650ms infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-0.025em, -0.0125em);
+    /* color: green; */
+    opacity: 0.8;
+}
+  
+.glitch span:last-child {
+    animation: glitch 375ms infinite;
+    clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+    transform: translate(0.0125em, 0.025em);
+    /* color: red; */
+    opacity: 0.8;
+}
+
+
+  
+@keyframes glitch {
+    0% {
+      text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+        -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+        -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    14% {
+      text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+        -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+        -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    15% {
+      text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+        0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+        -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    49% {
+      text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+        0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+        -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    50% {
+      text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+        0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    99% {
+      text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+        0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    100% {
+      text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+        -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+        -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+}
+  
+@media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-delay: -1ms !important;
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      background-attachment: initial !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0s !important;
+      transition-delay: 0s !important;
+    }
+}
+
+.credits {
+    position: fixed;
+    z-index: 100;
+    text-align: left;
+    justify-content: left;
+    left: 0;
+    bottom: 10px;
+    padding: 10px;
+    color: azure;
+    opacity: 0.3;
+}
+
+@media (max-width: 900px) {
+    .dynC {
+        display: none;
+    }
+}
+@media (max-width: 360px) {
+    .credits {
+        display: none;
+    }
+}
