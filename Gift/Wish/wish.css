@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #111;
+}
+
+canvas {
+	position: absolute;
+	top: 0;
+	left: -5em;
+}
+
+span {
+	font-size: 11px;
+}
+
+
+.credits {
+    font-family: "popins", sans-serif;
+    position: sticky;
+    z-index: 100;
+    text-align: left;
+    justify-content: left;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    color: azure;
+    opacity: 0.3;
+}
